@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src='js/jquery-3.3.1.js'></script>
+	</head>
+	<body>
+		<button class='get_api'>Get Api</button>
+		<div class='contain'>
+			
+		</div>
+
+		<script>
+			$(function(){
+				$('.get_api').on('click',function(){
+					$.ajax({
+						url:'/api/the-loai',
+						type:'get',
+						success:function(data){
+							data.forEach(function(item){
+								$('.contain').append('<p>'+item.ten_theloai+'</p>');
+							});
+						}
+					})
+				});
+			});
+		</script>
+	</body>
+      
+</html>
